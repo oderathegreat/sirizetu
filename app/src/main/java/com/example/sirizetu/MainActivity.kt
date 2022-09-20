@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-
+                Log.d("Error ", error.toString())
 
             }
         })
