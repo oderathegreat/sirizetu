@@ -8,13 +8,25 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        var firebasedatabase = FirebaseDatabase.getInstance()
+        var datareference = firebasedatabase.reference
 
-        var firebaseDatabase = FirebaseDatabase.getInstance()
-        var databaseRef = firebaseDatabase.reference
-        databaseRef.setValue("Hello There")
+        datareference.setValue("Abubujubujuju")
+
+//        var firebaseDatabase = FirebaseDatabase.getInstance()
+//        var databaseRef = firebaseDatabase.reference
+//        databaseRef.setValue("Hello There")
 
 
 
 
     }
 }
+
+
+
+
+
+
+
+
