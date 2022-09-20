@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "146386392416",
+    "project_id": "sirizetuchat",
+    "storage_bucket": "sirizetuchat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:146386392416:android:27af00885629e48a6c3a05",
+        "android_client_info": {
+          "package_name": "com.example.sirizetu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "146386392416-u1b6bk2fi1eemnt42sv620jtmpah2ddv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sirizetu",
+            "certificate_hash": "7780d3535d2ecd623356ed9e18ed96a38082b337"
+          }
+        },
+        {
+          "client_id": "146386392416-bdimfr5cr0v1j85tm012aecmrk700f0t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_xH7yQYhmv5S9f8J-C16EbnyW7aZ-GB8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "146386392416-bdimfr5cr0v1j85tm012aecmrk700f0t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
