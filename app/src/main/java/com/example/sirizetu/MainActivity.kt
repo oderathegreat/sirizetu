@@ -14,10 +14,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         var firebaseDatabase = FirebaseDatabase.getInstance()
-        var databaseRef = firebaseDatabase.getReference("messages")
+        var databaseRef = firebaseDatabase.getReference("messages").push()
         databaseRef.setValue("My Good People mko vipi")
 
-        var house_owner = House("Runda", "145 Street oyoo ln", "Kshs 15M","Oyoo tindo")
+        var house_owner = House("Runda Est", "100 Street UN rd", "Kshs 10M","Makori Martin")
 
         //setting value for it to be accessible
         databaseRef.setValue(house_owner)
@@ -26,8 +26,11 @@ class MainActivity : AppCompatActivity() {
         databaseRef.addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
 
-                  var value = snapshot.value
-                  //Log.d( "Value is ====>: ", value.toString() )
+                  var value = snapshot.value as HashMap<String, Any>
+                  Log.d( "Value is ====>: ", value.toString() )
+
+                //log a single value
+                //Log.d("Single Value is ", value.get("address").toString())
             }
 
             override fun onCancelled(error: DatabaseError) {
