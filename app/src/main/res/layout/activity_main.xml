@@ -43,7 +43,25 @@
             android:id="@+id/btnCreateUser"
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:text="Create Account" />
+
+        <TextView
+            android:id="@+id/txt_Login"
+            android:layout_marginTop="20dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Have an Account Already? Login " />
+
+        <Button
+            android:id="@+id/btn_Login"
+            android:layout_marginTop="18dp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="LOGIN" />
+
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
