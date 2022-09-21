@@ -1,5 +1,6 @@
 package com.example.sirizetu
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -49,6 +50,12 @@ class MainActivity : AppCompatActivity() {
                     task: Task<AuthResult> ->
                     if (task.isSuccessful) {
                         Toast.makeText(this, "Account Created", Toast.LENGTH_SHORT).show()
+
+                        //navigate user to login
+                        var intent = Intent(this, LoginActivity::class.java)
+                        startActivity(intent)
+                        finish()
+
                     } else {
 
                         Toast.makeText(this, "Error creating account", Toast.LENGTH_SHORT).show()
