@@ -15,9 +15,9 @@ class MainActivity : AppCompatActivity() {
 
         var firebaseDatabase = FirebaseDatabase.getInstance()
         var databaseRef = firebaseDatabase.getReference("messages").push()
-        databaseRef.setValue("My Good People mko vipi")
+        databaseRef.setValue("Doing some coding work")
 
-        var house_owner = House("Runda Est", "100 Street UN rd", "Kshs 10M","Makori Martin")
+        var house_owner = House("Karuna Place Est", "10th Street UN rd", "Kshs 8M","Makori Martin")
 
         //setting value for it to be accessible
         databaseRef.setValue(house_owner)
@@ -31,6 +31,9 @@ class MainActivity : AppCompatActivity() {
 
                 //log a single value
                 //Log.d("Single Value is ", value.get("address").toString())
+                //change read and write rules otherwise you get this exception
+                //sirizetu D/Error: DatabaseError: Permission denied
+
             }
 
             override fun onCancelled(error: DatabaseError) {
