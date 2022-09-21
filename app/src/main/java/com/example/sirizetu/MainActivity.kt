@@ -6,6 +6,8 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.google.android.gms.tasks.Task
+import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -43,12 +45,14 @@ class MainActivity : AppCompatActivity() {
             if (email !=null && password !=null) {
                 //proceed to create account
                 mAuth!!.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
-                    if (it.isSuccessful) {
 
-                        Toast.makeText(this, "Account Created Successfully", Toast.LENGTH_SHORT).show()
-
+                    task: Task<AuthResult> ->
+                    if (task.isSuccessful) {
+                        Toast.makeText(this, "Account Created", Toast.LENGTH_SHORT).show()
                     } else {
-                        Toast.makeText(this, "Cannot Create Account", Toast.LENGTH_SHORT).show()
+
+                        Toast.makeText(this, "Error creating account", Toast.LENGTH_SHORT).show()
+                        Log.d("Error is ==> ", task.exception.toString())
                     }
                 }
 
