@@ -11,10 +11,8 @@ import android.widget.Toast
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
 
 class MainActivity : AppCompatActivity() {
       private lateinit var email_Input:EditText
@@ -22,6 +20,8 @@ class MainActivity : AppCompatActivity() {
       private lateinit var username_Input:EditText
       private lateinit var btn_CreateUser:Button
       private  var mAuth:FirebaseAuth? = null
+      var uDatabase:DatabaseReference? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -45,18 +45,18 @@ class MainActivity : AppCompatActivity() {
 
             val email = email_Input.text.toString().trim()
             val password = password_Input.text.toString().trim()
-            val username = username_Input.text.toString().trim()
+            val _username = username_Input.text.toString().trim()
 
             //validate fields
-            if (!TextUtils.isEmpty(email) || !TextUtils.isEmpty(password) || !TextUtils.isEmpty(username)) {
+            if (!TextUtils.isEmpty(email) || !TextUtils.isEmpty(password) || !TextUtils.isEmpty(_username)) {
 
                 //check password length
 
                 if(password.length < 6 ) {
-                    Toast.makeText(this, "Password should be atleast six characters", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Password should be atleast be six characters", Toast.LENGTH_SHORT).show()
                 } else {
                     //call create user function
-                    createUser(email,password)
+                    createUser(email,password, _username)
 
                 }
 
@@ -71,13 +71,24 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun createUser(email:String, password:String) {
-
+    private fun createUser(email: String, password: String, _username: String) {
             //proceed to create account
             mAuth!!.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
 
                     task: Task<AuthResult> ->
                 if (task.isSuccessful) {
+
+                      //create a user object
+                    var currUser = mAuth!!.currentUser
+                    var user_id = currUser!!.uid
+
+                    var userObject = HashMap<String, String>()
+                    userObject.put("user_name", _username)
+                    userObject.put("status","Welcome back")
+                    userObject.put("image", "default photo")
+
+
+
                     Toast.makeText(this, "Account Created", Toast.LENGTH_SHORT).show()
 
                     //navigate user to login
