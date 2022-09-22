@@ -32,12 +32,6 @@ class MainActivity : AppCompatActivity() {
         btn_create = findViewById(R.id.btnCreateUser)
 
 
-
-
-
-
-
-
         btn_create.setOnClickListener {
 
            var email = email_input.text.toString().trim()
