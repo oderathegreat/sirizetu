@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
       private lateinit var password_Input:EditText
       private lateinit var username_Input:EditText
       private lateinit var btn_CreateUser:Button
+      private lateinit var btn_to_login:Button
       private  var mAuth:FirebaseAuth? = null
       var uDatabase:DatabaseReference? = null
 
@@ -32,12 +33,18 @@ class MainActivity : AppCompatActivity() {
         password_Input = findViewById(R.id.edtPassword)
         btn_CreateUser = findViewById(R.id.btnCreateUser)
         username_Input = findViewById(R.id.edtUsername)
+        btn_to_login = findViewById(R.id.btnTo_Login)
 
         //get our firebase Instance
         mAuth = FirebaseAuth.getInstance()
 
         //var firebaseDatabase = FirebaseDatabase.getInstance()
         //var databaseRef = firebaseDatabase.getReference("messages").push()
+        btn_to_login.setOnClickListener {
+            var _loginintent = Intent(this, LoginActivity::class.java)
+            startActivity(_loginintent)
+            finish()
+        }
 
 
        //on click when user presses button

@@ -27,7 +27,7 @@
             android:inputType="textEmailAddress" />
 
         <EditText
-            android:id="@+id/editTextTextPassword"
+            android:id="@+id/edt_password"
             android:layout_width="match_parent"
             android:layout_marginTop="30dp"
             android:layout_height="wrap_content"
@@ -36,7 +36,7 @@
             android:inputType="textPassword" />
 
         <Button
-            android:id="@+id/edtpassword"
+            android:id="@+id/btnLoginuser"
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="60dp"
