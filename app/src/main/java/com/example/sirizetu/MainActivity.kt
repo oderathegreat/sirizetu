@@ -36,8 +36,8 @@ class MainActivity : AppCompatActivity() {
         //get our firebase Instance
         mAuth = FirebaseAuth.getInstance()
 
-        var firebaseDatabase = FirebaseDatabase.getInstance()
-        var databaseRef = firebaseDatabase.getReference("messages").push()
+        //var firebaseDatabase = FirebaseDatabase.getInstance()
+        //var databaseRef = firebaseDatabase.getReference("messages").push()
 
 
        //on click when user presses button
@@ -67,8 +67,6 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-
-
     }
 
     private fun createUser(email: String, password: String, _username: String) {
@@ -82,10 +80,27 @@ class MainActivity : AppCompatActivity() {
                     var currUser = mAuth!!.currentUser
                     var user_id = currUser!!.uid
 
+                    //instantiate our database
+                    uDatabase = FirebaseDatabase.getInstance().reference
+                        .child("Users").child(user_id)
+
                     var userObject = HashMap<String, String>()
                     userObject.put("user_name", _username)
                     userObject.put("status","Welcome back")
                     userObject.put("image", "default photo")
+
+                    uDatabase!!.setValue(userObject).addOnCompleteListener {
+                        task: Task<Void> ->
+                        if (task.isSuccessful) {
+                            Toast.makeText(this, "Data Saved in Cloud", Toast.LENGTH_SHORT).show()
+                        } else {
+                            Toast.makeText(this, "Error saving Data", Toast.LENGTH_SHORT).show()
+
+                            Log.d("Error==>", task.exception.toString())
+
+                           // Log.d("Error is===>", task.exception.toString())
+                        }
+                    }
 
 
 
