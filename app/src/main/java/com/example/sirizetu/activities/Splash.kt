@@ -1,10 +1,11 @@
-package com.example.sirizetu
+package com.example.sirizetu.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
+import com.example.sirizetu.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
@@ -46,9 +47,13 @@ class Splash : AppCompatActivity() {
 
         _btnLogin.setOnClickListener {
 
+            var intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
         }
 
         _btnSignup.setOnClickListener {
+           var intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
 
         }
 
