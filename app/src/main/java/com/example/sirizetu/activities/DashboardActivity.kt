@@ -1,5 +1,6 @@
 package com.example.sirizetu.activities
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.viewpager.widget.ViewPager
@@ -18,6 +19,9 @@ class DashboardActivity : AppCompatActivity() {
         setContentView(R.layout.activity_dashboard)
         dashviewPager = findViewById(R.id.dash_viewPager_id)
         main_tabs = findViewById(R.id.main_Tabs)
+
+        //set tab colors
+        main_tabs.setTabTextColors(Color.WHITE, Color.GREEN)
 
         supportActionBar!!.title = "Dashboard"
 

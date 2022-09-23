@@ -83,11 +83,9 @@ class MainActivity : AppCompatActivity() {
 
                     task: Task<AuthResult> ->
                 if (task.isSuccessful) {
-
-                      //create a user object
+                    //create a user object
                     var currUser = mAuth!!.currentUser
                     var user_id = currUser!!.uid
-
                     //instantiate our database
                     uDatabase = FirebaseDatabase.getInstance().reference
                         .child("Users").child(user_id)
@@ -103,10 +101,8 @@ class MainActivity : AppCompatActivity() {
                             Toast.makeText(this, "Data Saved in Cloud", Toast.LENGTH_SHORT).show()
                         } else {
                             Toast.makeText(this, "Error saving Data", Toast.LENGTH_SHORT).show()
-
                             Log.d("Error==>", task.exception.toString())
-
-                           // Log.d("Error is===>", task.exception.toString())
+                            // Log.d("Error is===>", task.exception.toString())
                         }
                     }
 
@@ -125,6 +121,9 @@ class MainActivity : AppCompatActivity() {
                     Log.d("Error is ==> ", task.exception.toString())
                 }
             }
+
+
+
 
 
 
