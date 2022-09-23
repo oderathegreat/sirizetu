@@ -61,4 +61,12 @@ class Splash : AppCompatActivity() {
         super.onStart()
         authlistener?.let { mAuth!!.addAuthStateListener(it) }
     }
+
+    override fun onStop() {
+        super.onStop()
+
+        if(authlistener != null) {
+            mAuth!!.removeAuthStateListener(authlistener!!)
+        }
+    }
 }
