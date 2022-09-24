@@ -1,15 +1,19 @@
 package com.example.sirizetu.activities
 
 
-import android.R.menu
+
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import com.example.sirizetu.R
 import com.example.sirizetu.adapters.SectionPagerAdapter
 import com.google.android.material.tabs.TabLayout
+import com.google.firebase.auth.FirebaseAuth
 
 
 class DashboardActivity : AppCompatActivity() {
@@ -39,9 +43,30 @@ class DashboardActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater = menuInflater
-        inflater.inflate(com.example.sirizetu.R.menu.menu, menu)
+        inflater.inflate(R.menu.menu, menu)
         return super.onCreateOptionsMenu(menu)
         return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+       when(item.itemId) {
+           R.id.settings_id -> {
+               //Toast.makeText(this, "SOO", Toast.LENGTH_SHORT).show()
+               //Sign Out A user from the app
+
+           }
+           R.id.logout_id -> {
+               FirebaseAuth.getInstance().signOut()
+               //Quick fix
+               var i = Intent(this, MainActivity::class.java)
+               startActivity(i)
+               finish()
+
+           }
+       }
+
+        return true
+
     }
 
 
