@@ -52,12 +52,14 @@ class DashboardActivity : AppCompatActivity() {
        when(item.itemId) {
            R.id.settings_id -> {
                //Toast.makeText(this, "SOO", Toast.LENGTH_SHORT).show()
-               //Sign Out A user from the app
+               //Take User to settings page
+               var settings = Intent(this, SettingsActivity::class.java)
+               startActivity(settings)
 
            }
            R.id.logout_id -> {
                FirebaseAuth.getInstance().signOut()
-               //Quick fix
+               //Quick fix Sign Out A user from the app
                var i = Intent(this, MainActivity::class.java)
                startActivity(i)
                finish()
