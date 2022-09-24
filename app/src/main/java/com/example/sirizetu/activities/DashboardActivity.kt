@@ -1,12 +1,16 @@
 package com.example.sirizetu.activities
 
+
+import android.R.menu
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import com.example.sirizetu.R
 import com.example.sirizetu.adapters.SectionPagerAdapter
 import com.google.android.material.tabs.TabLayout
+
 
 class DashboardActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,12 +35,14 @@ class DashboardActivity : AppCompatActivity() {
 
 
 
-
-
-
-
-
-
-
     }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(com.example.sirizetu.R.menu.menu, menu)
+        return super.onCreateOptionsMenu(menu)
+        return true
+    }
+
+
 }

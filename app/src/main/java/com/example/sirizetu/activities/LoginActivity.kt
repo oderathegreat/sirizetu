@@ -44,13 +44,10 @@ class LoginActivity : AppCompatActivity() {
           mAuth!!.signInWithEmailAndPassword(user_email,user_password).addOnCompleteListener {
               task: Task<AuthResult> ->
               if (task.isSuccessful) {
-
                   //get the username from splitting users' email
                   var username = user_email.split("@")[0]
-
                   var dash_intent = Intent(this, DashboardActivity::class.java)
                   dash_intent.putExtra("username", username)
-
                   Log.d("Username ==> ", username.toString())
                   startActivity(dash_intent)
                   finish()
