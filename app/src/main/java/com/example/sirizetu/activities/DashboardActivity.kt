@@ -1,7 +1,5 @@
 package com.example.sirizetu.activities
 
-
-
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
@@ -51,10 +49,16 @@ class DashboardActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
        when(item.itemId) {
            R.id.settings_id -> {
-               //Toast.makeText(this, "SOO", Toast.LENGTH_SHORT).show()
+               //Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show()
                //Take User to settings page
-               var settings = Intent(this, SettingsActivity::class.java)
-               startActivity(settings)
+
+             if (item != null) {
+                 var intent = Intent(this, SettingsActivity::class.java)
+                 startActivity(intent)
+             }
+               else {
+                   Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show()
+             }
 
            }
            R.id.logout_id -> {

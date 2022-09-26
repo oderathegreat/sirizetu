@@ -6,14 +6,67 @@
     android:layout_height="match_parent"
     tools:context=".activities.SettingsActivity">
 
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/settings_profilePic"
+        android:layout_width="163dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="89dp"
+        android:src="@drawable/boy"
+        app:layout_constraintBottom_toTopOf="@+id/settings_Status"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/settings_Displayname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Settings Page"
-        android:textSize="28sp"
+        android:layout_marginTop="24dp"
+        android:text="Display Username"
+        android:textAlignment="gravity"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settings_profilePic" />
+
+    <TextView
+        android:id="@+id/settings_Status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="111dp"
+        android:layout_marginBottom="33dp"
+        android:text="My Bio.........."
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/settings_ChangePic"
+        app:layout_constraintEnd_toEndOf="@+id/settings_Displayname"
+        app:layout_constraintTop_toBottomOf="@+id/settings_profilePic" />
+
+    <Button
+        android:id="@+id/settings_ChangePic"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginBottom="378dp"
+        android:width="280dp"
+        android:text="Update Profile Pic"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499"
-        tools:layout_editor_absoluteX="134dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settings_Status" />
+
+    <Button
+        android:id="@+id/btnStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:width="280dp"
+        android:height="45dp"
+        android:text="Change Status"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
