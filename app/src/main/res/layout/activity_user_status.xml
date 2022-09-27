@@ -11,7 +11,7 @@
     <androidx.cardview.widget.CardView
         android:background="#FFF"
         android:layout_width="match_parent"
-        android:layout_height="230dp"
+        android:layout_height="280dp"
         android:foregroundGravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         tools:layout_editor_absoluteY="178dp" >
@@ -48,6 +48,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="65dp"
                 android:text="Update Status" />
+
+            <Button
+                android:id="@+id/changePic_btn"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:text="Update Photo"
+                tools:layout_editor_absoluteX="102dp"
+                tools:layout_editor_absoluteY="412dp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
